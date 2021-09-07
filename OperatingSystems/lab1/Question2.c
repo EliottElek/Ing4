@@ -10,6 +10,8 @@ int main(int argc, char *argv[])
 {
 
     printf("I am: %d\n", (int)getpid());
+    printf("Parent is: %d\n", (int)getppid());
+
 
     pid_t pid = fork();
 
