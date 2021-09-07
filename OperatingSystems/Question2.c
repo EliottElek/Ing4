@@ -4,6 +4,8 @@
 #include<unistd.h>
 #include<wait.h>
 
+// https://stackoverflow.com/questions/46368813/fork-returns-0-but-the-child-process-getpid-0-why
+
 int main(int argc, char *argv[])
 {
 
