@@ -1,2 +1,2 @@
 DevOps#1: 
-First instance of website on NodeJS
+First instance of web app on NodeJS
