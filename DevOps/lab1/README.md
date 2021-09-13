@@ -1,4 +1,4 @@
-DevOps#1: 
+## DevOps Lab#1: 
 First instance of web app on NodeJS
 
 To launch the app, make sure you are in the folder containing ```index.js```.
