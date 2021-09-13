@@ -1,7 +1,5 @@
 # 1.0.0 (06/09/21)
 
-## Unreleased
-
 ### Added
 
 - Create an HTTP web server using Express
