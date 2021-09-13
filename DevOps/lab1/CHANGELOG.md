@@ -1,5 +1,5 @@
-# Changelog
-Version 1.0.0
+# 1.0.0 (06/09/21)
+
 ## Unreleased
 
 ### Added
