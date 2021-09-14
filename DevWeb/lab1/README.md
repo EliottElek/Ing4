@@ -1,5 +1,6 @@
-**DevWeb lab1**
+# DevWeb lab1
 
+## Usage 
 To launch the app, make sure you are in the folder containing ```index.js```.
 
 In the command prompt, enter the following command :

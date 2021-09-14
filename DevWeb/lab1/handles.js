@@ -28,6 +28,8 @@ module.exports = {
     res.write(content);
     if (path === "/hello" && "name" in queryParams) {
       res.write("Hello " + queryParams["name"]);
+    } else if (path === "/") {
+      res.write("You are on the home page.");
     } else {
       res.write("404 error.. Seems like you're lost.");
     }
