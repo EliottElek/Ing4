@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
  if (fork() == 0) {
        printf("I'm a child (Generation 1) ! \n");
  }
+ }
  sleep(3);
   return 0; 
 }
