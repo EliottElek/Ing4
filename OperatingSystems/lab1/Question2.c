@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
    }else {
        printf("I'm the parent process ! \n");
    }
-   printf("My ID : ", getpid());
-   printf("My parent ID : ", getppid()); 
+   printf("My ID : %d", getpid());
+   printf("My parent ID : %d", getppid()); 
    return 0; 
 }
