@@ -39,7 +39,7 @@ int main(int argc, char **argv)
             //third part of the calculating
             printf("e = %d, f = %d\n", tab[4], tab[5]);
             // e = e + f
-            tab[4] = tab[4] - tab[5];
+            tab[4] = tab[4] + tab[5];
             printf("e + f = %d\n", tab[4]);
             wait(NULL);
         }
