@@ -48,7 +48,7 @@ int main(int argc, char **argv)
             // e = e + f
             tab[4] = tab[4] - tab[5];
             printf("e + f = %d\n", tab[4]);
-            tab2[0] = 1;
+            tabBooleans[0] = 1;
         }
         else
         {
@@ -57,14 +57,14 @@ int main(int argc, char **argv)
             // c = c - d
             tab[2] = tab[2] - tab[3];
             printf("c - d = %d\n", tab[2]);
-            while (tab2[0] == 0)
+            while (tabBooleans[0] == 0)
             {
             }
             //fourth part of the calculating
             tab[0] = tab[0] * tab[2];
             printf("(a + b)(c - d) = %d\n", tab[0]);
             wait(NULL);
-            tab2[1] = 1;
+            tabBooleans[1] = 1;
         }
     }
     else
@@ -74,7 +74,7 @@ int main(int argc, char **argv)
         // a = a + b
         tab[0] = tab[0] + tab[1];
         printf("a + b = %d\n", tab[0]);
-        while (tab2[1] == 0)
+        while (tabBooleans[1] == 0)
         {
         } //last part of the calculating
         tab[0] = tab[0] + tab[4];
