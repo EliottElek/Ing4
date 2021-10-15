@@ -8,34 +8,34 @@
 clock_t times(struct tms *buf); 
 
 
-void * f1(void *arg) {
+void * Thr1(void *arg) {
   int *a = malloc(sizeof(int));
   int *b = malloc(sizeof(int));
-  int *result1 = malloc(sizeof(int));
+  int *res1 = malloc(sizeof(int));
   *a = 1;
   *b = 2;
-  *result1 = *a + *b;
-  pthread_exit(result1);
+  *res1 = *a + *b;
+  pthread_exit(res1);
 }
 
-void * f2(void *arg) {
+void * thr2(void *arg) {
   int *c = malloc(sizeof(int));
   int *d = malloc(sizeof(int));
-  int *result2 = malloc(sizeof(int));
+  int *res2 = malloc(sizeof(int));
   *c = 3;
   *d = 4;
-  *result2 = *c - *d;
-  pthread_exit(result2);
+  *res2 = *c - *d;
+  pthread_exit(res2);
 }
 
-void * f3(void *arg) {
+void * thr3(void *arg) {
   int *e = malloc(sizeof(int));
   int *f = malloc(sizeof(int));
-  int *result3 = malloc(sizeof(int));
+  int *res3 = malloc(sizeof(int));
   *e = 5;
   *f = 6;
-  *result3 = *e + *f;
-  pthread_exit(result3);
+  *res3 = *e + *f;
+  pthread_exit(res3);
 }
 
 int main() {
@@ -46,12 +46,12 @@ int main() {
   pthread_t thread2;
   pthread_t thread3;
 
-  int *result1;
-  int *result2;
-  int *result3;
+  int *res1;
+  int *res2;
+  int *res3;
   int res = 0;
 
-  int  verif1, verif2, verif3;
+  int  check1, check2, check3;
 
   const char *text1 = "Thread 1";
   const char *text2 = "Thread 2";
@@ -65,39 +65,39 @@ int main() {
   for(int i = 0; i<500; i++)
   {
         /////THREAD 1//////  
-  verif1 = pthread_create(&thread1, NULL, f1, (void*) text1); 
-  if(verif1)
+  check1 = pthread_create(&thread1, NULL, thr1, (void*) text1); 
+  if(check1)
      {
-         fprintf(stderr,"Error - pthread_create() return code: %d\n",verif1);
+         fprintf(stderr,"Error - pthread_create() return code: %d\n",check1);
          exit(EXIT_FAILURE);
      }
-  pthread_join(thread1, (void **) &result1);
+  pthread_join(thread1, (void **) &res1);
   
   
   
   
 
         /////THREAD 2//////
-  verif2 = pthread_create(&thread2, NULL, f2, (void*) text2); 
-  if(verif2)
+  check2 = pthread_create(&thread2, NULL, thr2, (void*) text2); 
+  if(check2)
      {
-         fprintf(stderr,"Error - pthread_create() return code: %d\n",verif2);
+         fprintf(stderr,"Error - pthread_create() return code: %d\n",check2);
          exit(EXIT_FAILURE);
      }
-  pthread_join(thread2, (void **) &result2);
+  pthread_join(thread2, (void **) &res2);
   
 
         /////THREAD 3//////
-  verif3 = pthread_create(&thread3, NULL, f3, (void*) text3); 
-  if(verif3)
+  check3 = pthread_create(&thread3, NULL, thr3, (void*) text3); 
+  if(check3)
      {
-         fprintf(stderr,"Error - pthread_create() return code: %d\n",verif3);
+         fprintf(stderr,"Error - pthread_create() return code: %d\n",check3);
          exit(EXIT_FAILURE);
      }
-  pthread_join(thread3, (void **) &result3);
+  pthread_join(thread3, (void **) &res3);
 
   
-  res = *result1 * *result2 + *result3;
+  res = *res1 * *res2 + *res3;
   }
 
   printf("\n calculus of : (a + b) * (c -d) + (e +f) = %d\n", res);
